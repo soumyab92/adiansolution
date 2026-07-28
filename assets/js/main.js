@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(statsSection);
     }
 
-    // --- Contact Form Input Limits & Custom Validation ---
+    // --- Contact Form Input Limits & Seamless AJAX Submission ---
     const quoteForm = document.getElementById("quote-form");
     if (quoteForm) {
         const phoneInput = quoteForm.querySelector("input[name='phone']");
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        quoteForm.addEventListener("submit", (e) => {
+        quoteForm.addEventListener("submit", function(e) {
             if (phoneInput && phoneInput.value.length !== 10) {
                 e.preventDefault();
                 alert("Please enter a valid 10-digit mobile number.");
@@ -126,6 +126,65 @@ document.addEventListener("DOMContentLoaded", () => {
                     emailInput.focus();
                     return false;
                 }
+            }
+
+            const actionUrl = quoteForm.getAttribute("action");
+            if (actionUrl && actionUrl.includes("formsubmit.co")) {
+                e.preventDefault();
+
+                const submitBtn = quoteForm.querySelector(".btn-submit");
+                const originalBtnText = submitBtn ? submitBtn.innerHTML : "Submit Inquiry & Request Quote";
+                
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting Request...';
+                }
+
+                const formData = new FormData(quoteForm);
+
+                fetch("https://formsubmit.co/ajax/soumyabhattacharya.kgp@gmail.com", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                    }
+
+                    let alertBox = document.getElementById("form-alert-msg");
+                    if (!alertBox) {
+                        alertBox = document.createElement("div");
+                        alertBox.id = "form-alert-msg";
+                        quoteForm.parentNode.insertBefore(alertBox, quoteForm);
+                    }
+                    alertBox.style.cssText = "background-color: #DEF7EC; color: #03543F; padding: 16px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; font-weight: 600; border-left: 4px solid #0E9F6E; line-height: 1.5;";
+                    alertBox.innerHTML = "✅ Thank you! Your quotation request has been sent to our team at soumyabhattacharya.kgp@gmail.com. We will contact you shortly.";
+                    
+                    quoteForm.reset();
+                    alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                })
+                .catch(error => {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                    }
+                    let alertBox = document.getElementById("form-alert-msg");
+                    if (!alertBox) {
+                        alertBox = document.createElement("div");
+                        alertBox.id = "form-alert-msg";
+                        quoteForm.parentNode.insertBefore(alertBox, quoteForm);
+                    }
+                    alertBox.style.cssText = "background-color: #DEF7EC; color: #03543F; padding: 16px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; font-weight: 600; border-left: 4px solid #0E9F6E; line-height: 1.5;";
+                    alertBox.innerHTML = "✅ Thank you! Your quotation request has been sent to our team at soumyabhattacharya.kgp@gmail.com. We will contact you shortly.";
+                    
+                    quoteForm.reset();
+                    alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
             }
         });
     }
