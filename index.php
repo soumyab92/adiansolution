@@ -12,23 +12,103 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $brief = isset($_POST['brief']) ? htmlspecialchars(trim($_POST['brief'])) : '';
 
     if ($name && $company && $email && $phone && $solution && $brief) {
-        // Construct log directory and file path
+        // Target Recipient Email
+        $to_email = "soumyabhattacharya.kgp@gmail.com";
+        $subject = "⚡ New Quotation & Consultation Request - " . $company;
+
+        // Rich HTML Email Template
+        $email_template = '
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>New Quotation Request</title>
+        </head>
+        <body style="font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px;">
+            <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                <!-- Header Banner -->
+                <div style="background: linear-gradient(135deg, #031435 0%, #062B6E 100%); padding: 30px; text-align: center; color: #ffffff;">
+                    <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: 1px; color: #FFC107;">ADIAN SOLUTION & SERVICES</h1>
+                    <p style="margin: 8px 0 0 0; font-size: 13px; color: #00D8FF; text-transform: uppercase; letter-spacing: 2px;">AUTOMATING TODAY • POWERING TOMORROW</p>
+                </div>
+
+                <!-- Subtitle Badge -->
+                <div style="background-color: #0A4DBF; padding: 12px 20px; color: #ffffff; font-size: 14px; font-weight: 600; text-align: center;">
+                    📋 New Website Inquiry: Quotation & Consultation Request
+                </div>
+
+                <!-- Body Content -->
+                <div style="padding: 30px; color: #333333;">
+                    <p style="font-size: 15px; line-height: 1.6; margin-top: 0;">You have received a new project inquiry from the <strong>ADIAN Solution website form</strong>. Details are summarized below:</p>
+
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px;">
+                        <tr>
+                            <td style="padding: 12px 15px; background-color: #f8fafc; font-weight: bold; color: #062B6E; width: 35%; border-bottom: 1px solid #e2e8f0;">Full Name</td>
+                            <td style="padding: 12px 15px; border-bottom: 1px solid #e2e8f0; font-weight: 600; color: #1e293b;">' . $name . '</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px 15px; background-color: #f8fafc; font-weight: bold; color: #062B6E; border-bottom: 1px solid #e2e8f0;">Company / Plant</td>
+                            <td style="padding: 12px 15px; border-bottom: 1px solid #e2e8f0; font-weight: 600; color: #1e293b;">' . $company . '</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px 15px; background-color: #f8fafc; font-weight: bold; color: #062B6E; border-bottom: 1px solid #e2e8f0;">Email Address</td>
+                            <td style="padding: 12px 15px; border-bottom: 1px solid #e2e8f0; color: #0A4DBF; font-weight: 600;"><a href="mailto:' . $email . '" style="color: #0A4DBF; text-decoration: none;">' . $email . '</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px 15px; background-color: #f8fafc; font-weight: bold; color: #062B6E; border-bottom: 1px solid #e2e8f0;">Phone Number</td>
+                            <td style="padding: 12px 15px; border-bottom: 1px solid #e2e8f0; font-weight: 600; color: #1e293b;"><a href="tel:' . $phone . '" style="color: #1e293b; text-decoration: none;">' . $phone . '</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px 15px; background-color: #f8fafc; font-weight: bold; color: #062B6E; border-bottom: 1px solid #e2e8f0;">Requested Solution</td>
+                            <td style="padding: 12px 15px; border-bottom: 1px solid #e2e8f0; font-weight: 700; color: #0A4DBF;">' . $solution . '</td>
+                        </tr>
+                    </table>
+
+                    <!-- Project Brief Box -->
+                    <div style="margin-top: 25px; background-color: #f8fafc; border-left: 4px solid #0A4DBF; padding: 18px; border-radius: 6px;">
+                        <h4 style="margin: 0 0 10px 0; color: #062B6E; font-size: 14px; font-weight: 700; text-transform: uppercase;">Detailed Project Brief / Requirements:</h4>
+                        <p style="margin: 0; font-size: 14px; line-height: 1.7; color: #334155; white-space: pre-wrap;">' . nl2br($brief) . '</p>
+                    </div>
+
+                    <!-- Submission Info Footnote -->
+                    <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #e2e8f0; font-size: 12px; color: #64748b;">
+                        📅 Submitted On: ' . date("D, d M Y - h:i A T") . '<br>
+                        🌐 Sender IP Address: ' . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown') . '
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div style="background-color: #f1f5f9; padding: 15px; text-align: center; font-size: 12px; color: #64748b;">
+                    © ' . date("Y") . ' ADIAN Solution & Services • Automated Inquiry Notification
+                </div>
+            </div>
+        </body>
+        </html>
+        ';
+
+        // Set Headers for HTML Email
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers .= "From: ADIAN Website <no-reply@adiansolution.com>" . "\r\n";
+        $headers .= "Reply-To: " . $name . " <" . $email . ">" . "\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
+
+        // Attempt Email Transmission via PHP mail()
+        @mail($to_email, $subject, $email_template, $headers);
+
+        // Backup Inquiry Logging
         $log_dir = __DIR__ . '/assets/inquiries';
         if (!file_exists($log_dir)) {
             @mkdir($log_dir, 0777, true);
         }
-        
         $log_file = $log_dir . '/inquiries.txt';
         $log_data = "[" . date("Y-m-d H:i:s") . "] Name: $name | Company: $company | Email: $email | Phone: $phone | Solution: $solution | Brief: $brief\n";
         @file_put_contents($log_file, $log_data, FILE_APPEND);
 
-        // In production, you would trigger:
-        // mail("official@adiansolution.com", "New Quotation Request - " . $company, $brief, "From: " . $email);
-
-        $msg = "Thank you, $name! Your inquiry has been received. Our engineers will get in touch with you shortly at $email.";
+        $msg = "Thank you, $name! Your quotation request has been sent to our team at soumyabhattacharya.kgp@gmail.com. Our engineers will get back to you shortly at $email.";
         $msg_type = "success";
     } else {
-        $msg = "Inquiry failed. Please ensure all fields are filled out correctly.";
+        $msg = "Inquiry failed. Please ensure all required fields are filled out correctly.";
         $msg_type = "error";
     }
 }
@@ -60,7 +140,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-    <!-- --- HEADER / STICKY NAVBAR --- -->
+    <!-- --- TOP UTILITY BAR (Scrolls away naturally) --- -->
+    <div class="top-header-bar">
+        <div class="container top-bar-container">
+            <div class="top-bar-left">
+                <a href="mailto:official@adiansolution.com" class="top-bar-link">
+                    <i class="fas fa-envelope"></i> official@adiansolution.com
+                </a>
+                <a href="tel:+918100122721" class="top-bar-link">
+                    <i class="fas fa-phone-alt"></i> +91 8100122721
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <span class="top-bar-info"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 7:00 PM</span>
+                <span class="top-bar-divider">|</span>
+                <span class="top-bar-info"><i class="fas fa-map-marker-alt"></i> Factory: Sankrail, Howrah</span>
+                <span class="top-bar-divider">|</span>
+                <span class="top-bar-badge"><i class="fas fa-shield-halved"></i> GST & UDYAM Registered</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- STICKY NAVIGATION BAR (Pins to top: 0 when scrolled) --- -->
     <header class="site-header" id="site-header">
         <div class="container nav-container">
             <a href="#" class="brand-logo">

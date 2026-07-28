@@ -25,7 +25,28 @@
 </head>
 <body>
 
-    <!-- --- HEADER / STICKY NAVBAR --- -->
+    <!-- --- TOP UTILITY BAR (Scrolls away naturally) --- -->
+    <div class="top-header-bar">
+        <div class="container top-bar-container">
+            <div class="top-bar-left">
+                <a href="mailto:official@adiansolution.com" class="top-bar-link">
+                    <i class="fas fa-envelope"></i> official@adiansolution.com
+                </a>
+                <a href="tel:+918100122721" class="top-bar-link">
+                    <i class="fas fa-phone-alt"></i> +91 8100122721
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <span class="top-bar-info"><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 7:00 PM</span>
+                <span class="top-bar-divider">|</span>
+                <span class="top-bar-info"><i class="fas fa-map-marker-alt"></i> Factory: Sankrail, Howrah</span>
+                <span class="top-bar-divider">|</span>
+                <span class="top-bar-badge"><i class="fas fa-shield-halved"></i> GST & UDYAM Registered</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- STICKY NAVIGATION BAR (Pins to top: 0 when scrolled) --- -->
     <header class="site-header" id="site-header">
         <div class="container nav-container">
             <a href="#" class="brand-logo">
@@ -54,7 +75,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-            </</button>
+            </button>
         </div>
     </header>
 
@@ -645,7 +666,10 @@
                 
                 <!-- Contact Form Card -->
                 <div class="contact-form-card" data-aos="fade-left">
-                    <form action="#" method="POST" id="quote-form" onsubmit="event.preventDefault(); alert('Thank you for contacting us! Our team will get back to you shortly.');">
+                    <form action="https://formsubmit.co/soumyabhattacharya.kgp@gmail.com" method="POST" id="quote-form">
+                        <input type="hidden" name="_subject" value="⚡ New Quotation & Consultation Request - ADIAN Solution">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
                         <div class="form-row">
                             <div class="form-group">
                                 <label class="form-label">Full Name *</label>

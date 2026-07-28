@@ -3,15 +3,17 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-    // --- Sticky Header on Scroll ---
+    // --- Fixed Scrolled Header Transition ---
     const header = document.querySelector("header.site-header");
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
+    if (header) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 40) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    }
 
     // --- Mobile Menu Toggle & Close ---
     const menuToggle = document.querySelector(".mobile-nav-toggle");
