@@ -265,75 +265,99 @@
         </div>
     </section>
 
-    <!-- --- INDUSTRIES WE SERVE --- -->
-    <section class="section bg-light" id="industries">
+    <!-- --- INDUSTRIES WE SERVE (Interactive Carousel Slider) --- -->
+    <section class="section industries-section" id="industries">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">Diverse Verticals</span>
-                <h2 class="section-title">Industries <span>We Serve</span></h2>
+            <div class="section-header-flex" data-aos="fade-up">
+                <div>
+                    <span class="section-tag">Diverse Verticals</span>
+                    <h2 class="section-title">Industries <span>We Serve</span></h2>
+                    <p class="section-subtitle">Explore our specialized industrial automation verticals</p>
+                </div>
+                <div class="slider-nav-btns">
+                    <button class="slider-arrow-btn" id="ind-prev-btn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-arrow-btn" id="ind-next-btn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
 
-            <div class="industries-grid">
-                <!-- Food Industry -->
-                <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="industry-icon-box">
-                        <i class="fa-solid fa-utensils"></i>
+            <!-- Carousel Viewport & Track -->
+            <div class="industries-slider-viewport">
+                <div class="industries-slider-track" id="industries-slider-track">
+                    <!-- Card 1: Food Industry -->
+                    <div class="industry-slider-card">
+                        <div class="industry-card-inner">
+                            <div class="industry-card-num">01</div>
+                            <div class="industry-icon-box">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <h3>Food Industry</h3>
+                            <p>Providing hygienic process flow controls, recipe batching automation, and precise chemical dosing systems for food production plants.</p>
+                        </div>
                     </div>
-                    <h3>Food Industry</h3>
-                    <p>Providing hygienic process flow controls, recipe batching automation, and precise chemical dosing
-                        systems for food production plants.</p>
-                </div>
-                <!-- Pharmaceutical -->
-                <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="industry-icon-box">
-                        <i class="fa-solid fa-pills"></i>
+                    <!-- Card 2: Pharmaceutical -->
+                    <div class="industry-slider-card">
+                        <div class="industry-card-inner">
+                            <div class="industry-card-num">02</div>
+                            <div class="industry-icon-box">
+                                <i class="fa-solid fa-pills"></i>
+                            </div>
+                            <h3>Pharmaceutical</h3>
+                            <p>Designing FDA-compliant PLC logic, detailed digital batch records, and sterile liquid dosing machines for high quality controls.</p>
+                        </div>
                     </div>
-                    <h3>Pharmaceutical</h3>
-                    <p>Designing FDA-compliant PLC logic, detailed digital batch records, and sterile liquid dosing
-                        machines for high quality controls.</p>
-                </div>
-                <!-- Chemical -->
-                <div class="industry-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="industry-icon-box">
-                        <i class="fa-solid fa-flask"></i>
+                    <!-- Card 3: Chemical -->
+                    <div class="industry-slider-card">
+                        <div class="industry-card-inner">
+                            <div class="industry-card-num">03</div>
+                            <div class="industry-icon-box">
+                                <i class="fa-solid fa-flask"></i>
+                            </div>
+                            <h3>Chemical</h3>
+                            <p>Delivering high-safety control panels, ex-proof pressure loops, and automated chemical reactor controls for processing units.</p>
+                        </div>
                     </div>
-                    <h3>Chemical</h3>
-                    <p>Delivering high-safety control panels, ex-proof pressure loops, and automated chemical reactor
-                        controls for processing units.</p>
-                </div>
-                <!-- Water Treatment -->
-                <div class="industry-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="industry-icon-box">
-                        <i class="fa-solid fa-hand-holding-droplet"></i>
+                    <!-- Card 4: Water Treatment -->
+                    <div class="industry-slider-card">
+                        <div class="industry-card-inner">
+                            <div class="industry-card-num">04</div>
+                            <div class="industry-icon-box">
+                                <i class="fa-solid fa-hand-holding-droplet"></i>
+                            </div>
+                            <h3>Water Treatment</h3>
+                            <p>Optimizing filtration cycles, reverse osmosis automation, and precise pH adjusters/chlorinators via specialized dosing pumps.</p>
+                        </div>
                     </div>
-                    <h3>Water Treatment</h3>
-                    <p>Optimizing filtration cycles, reverse osmosis automation, and precise pH adjusters/chlorinators
-                        via specialized dosing pumps.</p>
-                </div>
-                <!-- Packaging -->
-                <div class="industry-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="industry-icon-box">
-                        <i class="fa-solid fa-box-open"></i>
+                    <!-- Card 5: Packaging -->
+                    <div class="industry-slider-card">
+                        <div class="industry-card-inner">
+                            <div class="industry-card-num">05</div>
+                            <div class="industry-icon-box">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+                            <h3>Packaging</h3>
+                            <p>Deploying high-speed motion controllers, packaging line sorting algorithms, and VFD settings for bottling and boxing automation.</p>
+                        </div>
                     </div>
-                    <h3>Packaging</h3>
-                    <p>Deploying high-speed motion controllers, packaging line sorting algorithms, and VFD settings for
-                        bottling and boxing automation.</p>
-                </div>
-                <!-- Textile -->
-                <div class="industry-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="industry-icon-box">
-                        <i class="fa-solid fa-shirt"></i>
+                    <!-- Card 6: Textile & Heavy Engineering -->
+                    <div class="industry-slider-card">
+                        <div class="industry-card-inner">
+                            <div class="industry-card-num">06</div>
+                            <div class="industry-icon-box">
+                                <i class="fa-solid fa-shirt"></i>
+                            </div>
+                            <h3>Textile & Heavy Engineering</h3>
+                            <p>Automating fabric processing lines, temperature settings control on drying units, and optimizing power usage via APFC panels.</p>
+                        </div>
                     </div>
-                    <h3>Textile</h3>
-                    <p>Automating fabric processing lines, temperature settings control on drying units, and optimizing
-                        power usage via APFC panels.</p>
                 </div>
             </div>
+
+            <!-- Dots Indicator -->
+            <div class="slider-dots-container" id="industries-slider-dots"></div>
 
             <!-- Industry Action Strip -->
             <div class="industry-action-strip" data-aos="fade-up">
-                <span><i class="fas fa-industry"></i> Don't see your specific manufacturing domain listed? We design
-                    bespoke automation panels for all factory verticals.</span>
+                <span><i class="fas fa-industry"></i> Don't see your specific manufacturing domain listed? We design bespoke automation panels for all factory verticals.</span>
                 <a href="#contact" class="btn btn-sm btn-accent"><i class="fas fa-bolt"></i> Request Custom Quote</a>
             </div>
         </div>

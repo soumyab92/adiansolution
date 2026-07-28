@@ -188,4 +188,138 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // --- Industries Interactive Carousel Slider Controller ---
+    const sliderTrack = document.getElementById("industries-slider-track");
+    const prevBtn = document.getElementById("ind-prev-btn");
+    const nextBtn = document.getElementById("ind-next-btn");
+    const dotsContainer = document.getElementById("industries-slider-dots");
+
+    if (sliderTrack) {
+        const cards = sliderTrack.querySelectorAll(".industry-slider-card");
+        const totalCards = cards.length;
+        let currentIndex = 0;
+
+        const getVisibleCards = () => {
+            if (window.innerWidth <= 600) return 1;
+            if (window.innerWidth <= 991) return 2;
+            return 3;
+        };
+
+        const getMaxIndex = () => {
+            return Math.max(0, totalCards - getVisibleCards());
+        };
+
+        // Create Dot Elements
+        const createDots = () => {
+            if (!dotsContainer) return;
+            dotsContainer.innerHTML = "";
+            const maxIdx = getMaxIndex();
+            for (let i = 0; i <= maxIdx; i++) {
+                const dot = document.createElement("div");
+                dot.className = `slider-dot ${i === currentIndex ? "active" : ""}`;
+                dot.addEventListener("click", () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        };
+
+        const updateSliderPosition = () => {
+            const visibleCards = getVisibleCards();
+            const cardWidthPercent = 100 / visibleCards;
+            const movePercentage = currentIndex * cardWidthPercent;
+            sliderTrack.style.transform = `translate3d(-${movePercentage}%, 0, 0)`;
+
+            // Update Dots
+            if (dotsContainer) {
+                const dots = dotsContainer.querySelectorAll(".slider-dot");
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle("active", idx === currentIndex);
+                });
+            }
+        };
+
+        const goToSlide = (index) => {
+            const maxIdx = getMaxIndex();
+            currentIndex = Math.max(0, Math.min(index, maxIdx));
+            updateSliderPosition();
+        };
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", () => {
+                const maxIdx = getMaxIndex();
+                if (currentIndex < maxIdx) {
+                    goToSlide(currentIndex + 1);
+                } else {
+                    goToSlide(0); // loop back
+                }
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener("click", () => {
+                const maxIdx = getMaxIndex();
+                if (currentIndex > 0) {
+                    goToSlide(currentIndex - 1);
+                } else {
+                    goToSlide(maxIdx);
+                }
+            });
+        }
+
+        createDots();
+        window.addEventListener("resize", () => {
+            createDots();
+            goToSlide(Math.min(currentIndex, getMaxIndex()));
+        });
+
+        // Mouse Wheel Scroll-Driven Slider Control
+        let isWheelLocked = false;
+        const sectionElem = document.getElementById("industries");
+
+        if (sectionElem) {
+            sectionElem.addEventListener("wheel", (e) => {
+                const maxIdx = getMaxIndex();
+                if (maxIdx <= 0) return;
+
+                if (e.deltaY > 0 && currentIndex < maxIdx) {
+                    e.preventDefault();
+                    if (!isWheelLocked) {
+                        isWheelLocked = true;
+                        goToSlide(currentIndex + 1);
+                        setTimeout(() => { isWheelLocked = false; }, 350);
+                    }
+                } else if (e.deltaY < 0 && currentIndex > 0) {
+                    e.preventDefault();
+                    if (!isWheelLocked) {
+                        isWheelLocked = true;
+                        goToSlide(currentIndex - 1);
+                        setTimeout(() => { isWheelLocked = false; }, 350);
+                    }
+                }
+            }, { passive: false });
+        }
+
+        // Touch Swipe Support
+        let startX = 0;
+        let isSwiping = false;
+
+        sliderTrack.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+            isSwiping = true;
+        }, { passive: true });
+
+        sliderTrack.addEventListener("touchend", (e) => {
+            if (!isSwiping) return;
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+            if (Math.abs(diffX) > 40) {
+                if (diffX > 0) {
+                    if (currentIndex < getMaxIndex()) goToSlide(currentIndex + 1);
+                } else {
+                    if (currentIndex > 0) goToSlide(currentIndex - 1);
+                }
+            }
+            isSwiping = false;
+        }, { passive: true });
+    }
 });

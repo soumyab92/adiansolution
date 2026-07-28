@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" fill="none">
+  <!-- Deep Blue Industrial Base Gradient -->
+  <rect width="1440" height="900" fill="url(#bg-gradient)"/>
+  
+  <!-- Glowing Circuit Grid & Nodes -->
+  <g opacity="0.2">
+    <path d="M0 150H1440M0 300H1440M0 450H1440M0 600H1440M0 750H1440" stroke="#00D8FF" stroke-width="1.5" stroke-dasharray="8 8"/>
+    <path d="M150 0V900M300 0V900M450 0V900M600 0V900M750 0V900M900 0V900M1050 0V900M1200 0V900M1350 0V900" stroke="#00D8FF" stroke-width="1.5" stroke-dasharray="8 8"/>
+  </g>
+
+  <!-- Glowing Hexagonal & Geometric Factory Nodes -->
+  <g opacity="0.3">
+    <polygon points="200,100 280,150 280,250 200,300 120,250 120,150" stroke="#00D8FF" stroke-width="2" fill="url(#hex-glow)"/>
+    <polygon points="1200,500 1280,550 1280,650 1200,700 1120,650 1120,550" stroke="#00D8FF" stroke-width="2" fill="url(#hex-glow)"/>
+    <polygon points="700,700 760,735 760,805 700,840 640,805 640,735" stroke="#0A4DBF" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Connection Nodes -->
+  <circle cx="200" cy="150" r="5" fill="#00D8FF"/>
+  <circle cx="280" cy="250" r="5" fill="#00D8FF"/>
+  <circle cx="1200" cy="550" r="5" fill="#00D8FF"/>
+  <circle cx="1120" cy="650" r="5" fill="#00D8FF"/>
+
+  <!-- Glowing Cyan Light Orbs -->
+  <circle cx="200" cy="200" r="280" fill="#00D8FF" opacity="0.12"/>
+  <circle cx="1200" cy="600" r="320" fill="#0A4DBF" opacity="0.18"/>
+  <circle cx="700" cy="350" r="220" fill="#FFC107" opacity="0.06"/>
+
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020B1D"/>
+      <stop offset="50%" stop-color="#04183E"/>
+      <stop offset="100%" stop-color="#062B6E"/>
+    </linearGradient>
+    <radialGradient id="hex-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00D8FF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00D8FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
