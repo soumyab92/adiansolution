@@ -989,12 +989,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- AOS (Animate on Scroll) JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Initialize AOS animations
+        // Initialize AOS animations (Disabled on mobile < 768px)
         document.addEventListener("DOMContentLoaded", () => {
             AOS.init({
                 duration: 1000,
                 once: true,
-                easing: 'ease-out-cubic'
+                easing: 'ease-out-cubic',
+                disable: window.innerWidth < 768
             });
         });
     </script>
