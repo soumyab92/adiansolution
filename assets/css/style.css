@@ -624,6 +624,63 @@ nav.nav-menu ul li a.active {
     text-transform: uppercase;
 }
 
+@media (min-width: 769px) {
+    .stat-duplicate {
+        display: none !important;
+    }
+}
+
+/* Mobile CSS3 Auto Scroll Animation for Stats Strip */
+@media (max-width: 768px) {
+    .stats-strip {
+        padding: 25px 0;
+        overflow: hidden;
+    }
+
+    .stats-strip .container {
+        padding: 0;
+        max-width: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .stats-grid {
+        display: flex;
+        grid-template-columns: none;
+        width: max-content;
+        gap: 20px;
+        animation: statsAutoScroll 16s linear infinite;
+        will-change: transform;
+    }
+
+    .stats-grid:hover,
+    .stats-grid:active {
+        animation-play-state: paused;
+    }
+
+    .stat-card {
+        flex: 0 0 220px;
+        box-sizing: border-box;
+        padding: 12px 18px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 12px;
+        border: 1px solid rgba(0, 216, 255, 0.25);
+    }
+
+    .stat-card::after {
+        display: none !important;
+    }
+}
+
+@keyframes statsAutoScroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
 /* --- Section Global Layouts --- */
 .section {
     padding: 120px 0;
