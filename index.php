@@ -703,61 +703,178 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- --- CLIENT TESTIMONIALS SECTION --- -->
     <section class="section testimonials-section" id="testimonials">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">Client Reviews</span>
-                <h2 class="section-title">What Our <span>Partners Say</span></h2>
-            </div>
-            
-            <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-review">
-                        "The liquid dosing applicator installed by ADIAN Solution has improved our additive precision tenfold. Their PLC programs are very robust and easy to operate. Their team provides excellent support."
-                    </p>
-                    <div class="testimonial-client">
-                        <div class="testimonial-avatar">A</div>
-                        <div class="testimonial-client-info">
-                            <h4>Amit Sen</h4>
-                            <p>Operations Lead, Apex Feed Industries</p>
-                        </div>
-                    </div>
+            <div class="section-header-flex" data-aos="fade-up">
+                <div>
+                    <span class="section-tag">Client Success Stories</span>
+                    <h2 class="section-title">Trusted By <span>Industry Leaders</span></h2>
+                    <p class="section-subtitle">Read what plant managers, technical directors, and engineers say about our automation solutions.</p>
                 </div>
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-review">
-                        "We hired them to design and deploy MCC and APFC panels across our packaging line. The power optimization has already reduced our utility penalties. Absolute professionals in industrial electricity."
-                    </p>
-                    <div class="testimonial-client">
-                        <div class="testimonial-avatar">S</div>
-                        <div class="testimonial-client-info">
-                            <h4>S. K. Sharma</h4>
-                            <p>Plant Director, Himalaya Pharma Logistics</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-review">
-                        "Their commissioning work on our water treatment filtration setup was smooth. The custom Siemens PLC console panel operates perfectly. Recommended for complex B2B plant solutions."
-                    </p>
-                    <div class="testimonial-client">
-                        <div class="testimonial-avatar">R</div>
-                        <div class="testimonial-client-info">
-                            <h4>Rajesh Gupta</h4>
-                            <p>General Manager, AquaPure Solutions</p>
-                        </div>
-                    </div>
+                <div class="testimonials-slider-nav">
+                    <button class="slider-arrow prev-arrow" id="prevTestimonial" aria-label="Previous Testimonials">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-arrow next-arrow" id="nextTestimonial" aria-label="Next Testimonials">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
+
+            <div class="testimonials-slider-viewport">
+                <div class="testimonials-slider-track">
+                    <!-- Testimonial 1: Male -->
+                    <div class="testimonial-slider-card">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-right quote-watermark"></i>
+                            <div class="testimonial-top">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <span class="verified-badge"><i class="fas fa-circle-check"></i> Verified Client</span>
+                            </div>
+                            <p class="testimonial-review">
+                                "The liquid dosing applicator installed by ADIAN Solution has improved our additive precision tenfold. Their PLC programs are robust, stable, and effortless for our operators to control."
+                            </p>
+                            <div class="testimonial-client">
+                                <div class="testimonial-avatar-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=80" alt="Amit Sen" class="testimonial-avatar-img">
+                                </div>
+                                <div class="testimonial-client-info">
+                                    <h4>Amit Sen</h4>
+                                    <p>Operations Lead, Apex Feed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2: Female -->
+                    <div class="testimonial-slider-card">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-right quote-watermark"></i>
+                            <div class="testimonial-top">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <span class="verified-badge"><i class="fas fa-circle-check"></i> Verified Client</span>
+                            </div>
+                            <p class="testimonial-review">
+                                "We hired ADIAN Solution to deploy custom MCC and APFC panels across our packaging line. The power factor optimization has drastically reduced utility penalties. Absolute professionals."
+                            </p>
+                            <div class="testimonial-client">
+                                <div class="testimonial-avatar-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80" alt="Sunita Sharma" class="testimonial-avatar-img">
+                                </div>
+                                <div class="testimonial-client-info">
+                                    <h4>Sunita Sharma</h4>
+                                    <p>Plant Director, Himalaya Pharma</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3: Male -->
+                    <div class="testimonial-slider-card">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-right quote-watermark"></i>
+                            <div class="testimonial-top">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <span class="verified-badge"><i class="fas fa-circle-check"></i> Verified Client</span>
+                            </div>
+                            <p class="testimonial-review">
+                                "Their commissioning work on our water treatment reverse osmosis setup was flawless. The Siemens SCADA console panel operates 24/7 without a single hiccup. Highly recommended!"
+                            </p>
+                            <div class="testimonial-client">
+                                <div class="testimonial-avatar-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80" alt="Rajesh Gupta" class="testimonial-avatar-img">
+                                </div>
+                                <div class="testimonial-client-info">
+                                    <h4>Rajesh Gupta</h4>
+                                    <p>General Manager, AquaPure</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4: Female -->
+                    <div class="testimonial-slider-card">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-right quote-watermark"></i>
+                            <div class="testimonial-top">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <span class="verified-badge"><i class="fas fa-circle-check"></i> Verified Client</span>
+                            </div>
+                            <p class="testimonial-review">
+                                "ADIAN Solution upgraded our processing line with automated liquid filling logic and safety interlocks. Production speed increased by 35% with zero safety incidents!"
+                            </p>
+                            <div class="testimonial-client">
+                                <div class="testimonial-avatar-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80" alt="Ananya Roy" class="testimonial-avatar-img">
+                                </div>
+                                <div class="testimonial-client-info">
+                                    <h4>Ananya Roy</h4>
+                                    <p>Automation Lead, Greenfield</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5: Male -->
+                    <div class="testimonial-slider-card">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-right quote-watermark"></i>
+                            <div class="testimonial-top">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <span class="verified-badge"><i class="fas fa-circle-check"></i> Verified Client</span>
+                            </div>
+                            <p class="testimonial-review">
+                                "The heavy-duty PLC panel engineering delivered by ADIAN withstands our continuous foundry temperatures. Excellent wiring organization and comprehensive schematic manuals!"
+                            </p>
+                            <div class="testimonial-client">
+                                <div class="testimonial-avatar-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="V. Malhotra" class="testimonial-avatar-img">
+                                </div>
+                                <div class="testimonial-client-info">
+                                    <h4>V. Malhotra</h4>
+                                    <p>CTO, Century Steel</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6: Female -->
+                    <div class="testimonial-slider-card">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-right quote-watermark"></i>
+                            <div class="testimonial-top">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <span class="verified-badge"><i class="fas fa-circle-check"></i> Verified Client</span>
+                            </div>
+                            <p class="testimonial-review">
+                                "Outstanding engineering responsiveness! When our bioreactor dosing system required emergency logic modification, their team arrived onsite and recalibrated the loops in 3 hours."
+                            </p>
+                            <div class="testimonial-client">
+                                <div class="testimonial-avatar-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Meera Mukherjee" class="testimonial-avatar-img">
+                                </div>
+                                <div class="testimonial-client-info">
+                                    <h4>Meera Mukherjee</h4>
+                                    <p>VP Engg, National Biotech</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dots Pagination -->
+            <div class="slider-dots-container" id="testimonialDots"></div>
         </div>
     </section>
 

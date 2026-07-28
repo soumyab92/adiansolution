@@ -334,4 +334,116 @@ document.addEventListener("DOMContentLoaded", () => {
             isSwiping = false;
         }, { passive: true });
     }
+
+    // --- Testimonials Section Carousel Slider (Desktop Mouse Wheel Controlled) ---
+    const testimonialTrack = document.querySelector(".testimonials-slider-track");
+    const testimonialCards = document.querySelectorAll(".testimonial-slider-card");
+    const prevTestimonialBtn = document.getElementById("prevTestimonial");
+    const nextTestimonialBtn = document.getElementById("nextTestimonial");
+    const testimonialDotsContainer = document.getElementById("testimonialDots");
+
+    if (testimonialTrack && testimonialCards.length > 0) {
+        let currentTestimonialIndex = 0;
+
+        const getTestimonialCardsPerView = () => {
+            if (window.innerWidth <= 768) return 1;
+            if (window.innerWidth <= 991) return 2;
+            return 3;
+        };
+
+        const getMaxTestimonialIndex = () => {
+            return Math.max(0, testimonialCards.length - getTestimonialCardsPerView());
+        };
+
+        const buildTestimonialDots = () => {
+            if (!testimonialDotsContainer) return;
+            testimonialDotsContainer.innerHTML = "";
+            const maxIdx = getMaxTestimonialIndex();
+            for (let i = 0; i <= maxIdx; i++) {
+                const dot = document.createElement("button");
+                dot.classList.add("slider-dot");
+                dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+                if (i === currentTestimonialIndex) dot.classList.add("active");
+                dot.addEventListener("click", () => goToTestimonialSlide(i));
+                testimonialDotsContainer.appendChild(dot);
+            }
+        };
+
+        const updateTestimonialDots = () => {
+            if (!testimonialDotsContainer) return;
+            const dots = testimonialDotsContainer.querySelectorAll(".slider-dot");
+            dots.forEach((dot, index) => {
+                if (index === currentTestimonialIndex) {
+                    dot.classList.add("active");
+                } else {
+                    dot.classList.remove("active");
+                }
+            });
+        };
+
+        const goToTestimonialSlide = (index) => {
+            if (window.innerWidth <= 768) return; // Disable slider transform on mobile
+            const maxIdx = getMaxTestimonialIndex();
+            currentTestimonialIndex = Math.max(0, Math.min(index, maxIdx));
+
+            const cardsPerView = getTestimonialCardsPerView();
+            const stepPercent = 100 / cardsPerView;
+            testimonialTrack.style.transform = `translate3d(-${currentTestimonialIndex * stepPercent}%, 0, 0)`;
+
+            if (prevTestimonialBtn) prevTestimonialBtn.disabled = (currentTestimonialIndex === 0);
+            if (nextTestimonialBtn) nextTestimonialBtn.disabled = (currentTestimonialIndex >= maxIdx);
+            updateTestimonialDots();
+        };
+
+        if (prevTestimonialBtn) {
+            prevTestimonialBtn.addEventListener("click", () => {
+                goToTestimonialSlide(currentTestimonialIndex - 1);
+            });
+        }
+
+        if (nextTestimonialBtn) {
+            nextTestimonialBtn.addEventListener("click", () => {
+                goToTestimonialSlide(currentTestimonialIndex + 1);
+            });
+        }
+
+        // Desktop Mouse Wheel Hijacking for Testimonials Section
+        const testimonialsSection = document.getElementById("testimonials");
+        if (testimonialsSection) {
+            let isTestimonialWheelLocked = false;
+
+            testimonialsSection.addEventListener("wheel", (e) => {
+                if (window.innerWidth <= 768) return; // Allow natural vertical scroll on mobile
+
+                const maxIdx = getMaxTestimonialIndex();
+                const atStart = (currentTestimonialIndex === 0 && e.deltaY < 0);
+                const atEnd = (currentTestimonialIndex >= maxIdx && e.deltaY > 0);
+
+                if (!atStart && !atEnd) {
+                    e.preventDefault();
+                    if (!isTestimonialWheelLocked) {
+                        isTestimonialWheelLocked = true;
+                        if (e.deltaY > 0) {
+                            goToTestimonialSlide(currentTestimonialIndex + 1);
+                        } else {
+                            goToTestimonialSlide(currentTestimonialIndex - 1);
+                        }
+                        setTimeout(() => { isTestimonialWheelLocked = false; }, 350);
+                    }
+                }
+            }, { passive: false });
+        }
+
+        buildTestimonialDots();
+        goToTestimonialSlide(0);
+
+        window.addEventListener("resize", () => {
+            buildTestimonialDots();
+            if (window.innerWidth <= 768) {
+                testimonialTrack.style.transform = "none";
+            } else {
+                goToTestimonialSlide(currentTestimonialIndex);
+            }
+        });
+    }
 });
