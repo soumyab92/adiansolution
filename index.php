@@ -787,39 +787,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="form-row">
                             <div class="form-group">
                                 <label class="form-label">Full Name *</label>
-                                <input type="text" name="name" required placeholder="e.g. Rajesh Kumar" class="form-control">
+                                <input type="text" name="name" required minlength="2" maxlength="100" pattern="[a-zA-Z\s.'-]+" title="Please enter a valid full name (letters and spaces only)." placeholder="e.g. Rajesh Kumar" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Company / Plant Name *</label>
-                                <input type="text" name="company" required placeholder="e.g. Industrial Ltd" class="form-control">
+                                <input type="text" name="company" required minlength="2" maxlength="100" placeholder="e.g. Industrial Ltd" class="form-control">
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
                                 <label class="form-label">Email Address *</label>
-                                <input type="email" name="email" required placeholder="name@company.com" class="form-control">
+                                <input type="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address (e.g. name@company.com)." placeholder="name@company.com" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Phone / Mobile *</label>
-                                <input type="tel" name="phone" required placeholder="+91 98765 43210" class="form-control">
+                                <label class="form-label">Phone / Mobile (10 Digits) *</label>
+                                <input type="tel" name="phone" required minlength="10" maxlength="10" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number." placeholder="e.g. 9876543210" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);" class="form-control">
                             </div>
                         </div>
                         
                         <div class="form-group mb-20">
                             <label class="form-label">Requested Solution *</label>
-                            <select name="solution" class="form-control form-select">
-                                <option>PLC & SCADA Automation</option>
-                                <option>Liquid Dosing Systems</option>
-                                <option>PCC & MCC Panels</option>
-                                <option>APFC Panels</option>
-                                <option>General Panel building / Other</option>
+                            <select name="solution" required class="form-control form-select">
+                                <option value="" disabled selected>Select a Solution...</option>
+                                <option value="PLC & SCADA Automation">PLC & SCADA Automation</option>
+                                <option value="Liquid Dosing Systems">Liquid Dosing Systems</option>
+                                <option value="PCC & MCC Panels">PCC & MCC Panels</option>
+                                <option value="APFC Panels">APFC Panels</option>
+                                <option value="General Panel building / Other">General Panel building / Other</option>
                             </select>
                         </div>
                         
                         <div class="form-group mb-25">
                             <label class="form-label">Detailed Project Brief *</label>
-                            <textarea name="brief" rows="4" required placeholder="Describe your panel specs or dosing requirements..." class="form-control form-textarea"></textarea>
+                            <textarea name="brief" rows="4" required minlength="10" maxlength="2000" placeholder="Describe your panel specs or dosing requirements..." class="form-control form-textarea"></textarea>
                         </div>
                         
                         <button type="submit" class="btn btn-primary btn-submit">Submit Inquiry & Request Quote <i class="fas fa-paper-plane"></i></button>

@@ -96,4 +96,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
         observer.observe(statsSection);
     }
+
+    // --- Contact Form Input Limits & Custom Validation ---
+    const quoteForm = document.getElementById("quote-form");
+    if (quoteForm) {
+        const phoneInput = quoteForm.querySelector("input[name='phone']");
+        const emailInput = quoteForm.querySelector("input[name='email']");
+
+        if (phoneInput) {
+            phoneInput.addEventListener("input", (e) => {
+                // Restrict strictly to digits 0-9, max 10 digits
+                e.target.value = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
+            });
+        }
+
+        quoteForm.addEventListener("submit", (e) => {
+            if (phoneInput && phoneInput.value.length !== 10) {
+                e.preventDefault();
+                alert("Please enter a valid 10-digit mobile number.");
+                phoneInput.focus();
+                return false;
+            }
+
+            if (emailInput) {
+                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailPattern.test(emailInput.value)) {
+                    e.preventDefault();
+                    alert("Please enter a valid email address (e.g. name@company.com).");
+                    emailInput.focus();
+                    return false;
+                }
+            }
+        });
+    }
 });
