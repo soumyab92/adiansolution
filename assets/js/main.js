@@ -224,6 +224,10 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         const updateSliderPosition = () => {
+            if (window.innerWidth <= 768) {
+                sliderTrack.style.transform = "none";
+                return;
+            }
             const visibleCards = getVisibleCards();
             const cardWidthPercent = 100 / visibleCards;
             const movePercentage = currentIndex * cardWidthPercent;
@@ -239,6 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         const goToSlide = (index) => {
+            if (window.innerWidth <= 768) return;
             const maxIdx = getMaxIndex();
             currentIndex = Math.max(0, Math.min(index, maxIdx));
             updateSliderPosition();
@@ -246,6 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (nextBtn) {
             nextBtn.addEventListener("click", () => {
+                if (window.innerWidth <= 768) return;
                 const maxIdx = getMaxIndex();
                 if (currentIndex < maxIdx) {
                     goToSlide(currentIndex + 1);
@@ -257,6 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (prevBtn) {
             prevBtn.addEventListener("click", () => {
+                if (window.innerWidth <= 768) return;
                 const maxIdx = getMaxIndex();
                 if (currentIndex > 0) {
                     goToSlide(currentIndex - 1);
@@ -268,6 +275,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         createDots();
         window.addEventListener("resize", () => {
+            if (window.innerWidth <= 768) {
+                sliderTrack.style.transform = "none";
+                return;
+            }
             createDots();
             goToSlide(Math.min(currentIndex, getMaxIndex()));
         });
@@ -278,6 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (sectionElem) {
             sectionElem.addEventListener("wheel", (e) => {
+                if (window.innerWidth <= 768) return;
                 const maxIdx = getMaxIndex();
                 if (maxIdx <= 0) return;
 
