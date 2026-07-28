@@ -2246,42 +2246,93 @@ footer.site-footer {
     nav.nav-menu ul { flex-direction: column; gap: 25px; }
     header.site-header .btn { display: none; } /* Hide Navbar CTA on mobile */
     
+    /* Mobile Specific Hero Section Layout & iOS Safari Background Fix */
+    .hero-section {
+        height: auto !important;
+        min-height: 100vh;
+        padding-top: 80px;
+        padding-bottom: 60px;
+        background-attachment: scroll !important; /* Fixes iOS Safari background image invisibility bug */
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+
     .hero-section .container { 
-        grid-template-columns: 1fr; 
+        display: flex !important;
+        flex-direction: column !important;
         text-align: center; 
-        padding-top: 110px; 
+        padding-top: 30px; 
     }
-    .hero-tag { justify-content: center; }
-    .hero-title { font-size: 38px; }
-    .hero-desc { margin-left: auto; margin-right: auto; }
-    .hero-actions { justify-content: center; }
-    
-    /* Responsive Diamond Grid for Mobile/Tablet */
+
+    .hero-left {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        order: 1 !important;
+    }
+
+    /* Mobile Order: 1st Heading -> 2nd Machinery Images -> 3rd Desc & Buttons */
+    .hero-heading-block {
+        order: 1 !important;
+        margin-bottom: 15px !important;
+    }
+
     .hero-right {
-        display: flex;
-        height: 420px;
-        margin-top: 30px;
+        order: 2 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        height: 360px !important;
+        margin-top: 10px !important;
+        margin-bottom: 25px !important;
+        width: 100% !important;
     }
+
+    .hero-desc {
+        order: 3 !important;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .hero-actions {
+        order: 4 !important;
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-tag {
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    .hero-tag::before {
+        display: none !important;
+    }
+    .hero-title { font-size: 34px; line-height: 1.25; }
+    .hero-actions .btn { width: 100%; }
+    
+    /* Responsive Diamond Grid for Mobile */
     .diamond-grid {
-        width: 340px;
-        height: 340px;
+        width: 310px;
+        height: 310px;
     }
     .diamond-card {
-        width: 120px;
-        height: 120px;
+        width: 110px;
+        height: 110px;
         border-width: 2px;
     }
     .diamond-label {
         font-size: 8px;
         padding: 3px 6px;
     }
-    .dc-top { top: 0px; left: calc(50% - 60px); }
-    .dc-bottom { bottom: 0px; left: calc(50% - 60px); }
-    .dc-left { top: calc(50% - 60px); left: 0px; }
-    .dc-right { top: calc(50% - 60px); right: 0px; }
-    .center-glow { width: 80px; height: 80px; top: calc(50% - 40px); left: calc(50% - 40px); }
-
-    .hero-section { height: auto; padding-bottom: 60px; }
+    .dc-top { top: 0px; left: calc(50% - 55px); }
+    .dc-bottom { bottom: 0px; left: calc(50% - 55px); }
+    .dc-left { top: calc(50% - 55px); left: 0px; }
+    .dc-right { top: calc(50% - 55px); right: 0px; }
+    .center-glow { width: 70px; height: 70px; top: calc(50% - 35px); left: calc(50% - 35px); }
     .section { padding: 70px 0; }
     .section-title { font-size: 28px; }
     .solutions-grid { grid-template-columns: 1fr; }

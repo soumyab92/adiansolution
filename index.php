@@ -199,12 +199,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="hero-video-overlay"></div>
         <div class="container">
             <div class="hero-left" data-aos="fade-right">
-                <span class="hero-tag">Industrial Automation Solutions</span>
-                <h1 class="hero-title">
-                    <span>SMART AUTOMATION</span>
-                    <span>RELIABLE PERFORMANCE</span>
-                    <span class="accent-text">BETTER TOMORROW</span>
-                </h1>
+                <div class="hero-heading-block">
+                    <span class="hero-tag">Industrial Automation Solutions</span>
+                    <h1 class="hero-title">
+                        <span>SMART AUTOMATION</span>
+                        <span>RELIABLE PERFORMANCE</span>
+                        <span class="accent-text">BETTER TOMORROW</span>
+                    </h1>
+                </div>
                 <p class="hero-desc">
                     Delivering advanced automation solutions that drive efficiency, improve reliability and build a smarter tomorrow.
                 </p>
