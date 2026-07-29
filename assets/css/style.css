@@ -1842,6 +1842,7 @@ nav.nav-menu ul li a.active {
 
 /* Mobile Non-Slider Grid Override */
 @media (max-width: 768px) {
+
     .testimonials-slider-nav,
     #testimonialDots {
         display: none !important;
@@ -2646,7 +2647,7 @@ footer.site-footer {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        padding-top: 60px;
+        padding-top: 0px;
         padding-bottom: 20px;
         background-attachment: scroll !important;
         /* Fixes iOS Safari background image invisibility bug */
