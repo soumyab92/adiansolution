@@ -2569,8 +2569,6 @@ footer.site-footer {
     }
 
     header.site-header {
-        top: auto;
-        left: auto;
         width: 100%;
         z-index: 9999;
         padding: 12px 0;
