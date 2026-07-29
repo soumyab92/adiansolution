@@ -2641,10 +2641,13 @@ footer.site-footer {
 
     /* Mobile Specific Hero Section Layout & iOS Safari Background Fix */
     .hero-section {
-        height: auto !important;
-        min-height: 100vh;
-        padding-top: 80px;
-        padding-bottom: 60px;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding-top: 60px;
+        padding-bottom: 20px;
         background-attachment: scroll !important;
         /* Fixes iOS Safari background image invisibility bug */
         background-position: center center !important;
@@ -2654,8 +2657,11 @@ footer.site-footer {
     .hero-section .container {
         display: flex !important;
         flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
         text-align: center;
-        padding-top: 30px;
+        padding-top: 0;
+        width: 100%;
     }
 
     .hero-left {
@@ -2665,25 +2671,18 @@ footer.site-footer {
         order: 1 !important;
     }
 
-    /* Mobile Order: 1st Heading -> 2nd Machinery Images -> 3rd Desc & Buttons */
+    /* Mobile Order: Heading -> Desc & Buttons (Image hidden on mobile) */
     .hero-heading-block {
         order: 1 !important;
         margin-bottom: 15px !important;
     }
 
     .hero-right {
-        order: 2 !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        height: 360px !important;
-        margin-top: 10px !important;
-        margin-bottom: 25px !important;
-        width: 100% !important;
+        display: none !important;
     }
 
     .hero-desc {
-        order: 3 !important;
+        order: 2 !important;
         margin-left: auto;
         margin-right: auto;
         font-size: 14px;
@@ -2691,7 +2690,7 @@ footer.site-footer {
     }
 
     .hero-actions {
-        order: 4 !important;
+        order: 3 !important;
         justify-content: center;
         flex-direction: column;
         gap: 12px;
@@ -2916,7 +2915,7 @@ footer.site-footer {
     }
 
     .hero-right {
-        height: 350px;
+        display: none !important;
     }
 
     .diamond-grid {
