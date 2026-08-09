@@ -24,6 +24,8 @@
     --neon-blue-border: rgba(10, 77, 191, 0.6);
     --shadow-premium: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
     --shadow-glow: 0 0 20px rgba(10, 77, 191, 0.2);
+    --success-color: #10B981;
+    --warning-color: #F59E0B;
 }
 
 * {
@@ -381,6 +383,62 @@ nav.nav-menu ul li a.active {
     align-items: center;
     overflow: hidden;
     color: var(--white);
+}
+
+/* --- Inner Pages Hero Video Background --- */
+.inner-hero-section {
+    position: relative;
+    padding: 110px 0 70px;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--white);
+    background: url('../images/hero_bg.png') center/cover no-repeat;
+}
+
+.inner-hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0.75;
+    pointer-events: none;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.inner-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(3, 20, 53, 0.85) 0%, rgba(6, 43, 110, 0.78) 50%, rgba(4, 27, 68, 0.90) 100%);
+    box-shadow: inset 0 0 120px rgba(3, 20, 53, 0.95);
+    z-index: 1;
+}
+
+.inner-hero-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 20%, rgba(3, 20, 53, 0.80) 100%);
+    pointer-events: none;
+}
+
+.inner-hero-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-section::before {
@@ -1717,6 +1775,10 @@ nav.nav-menu ul li a.active {
     color: var(--accent-color) !important;
 }
 
+.testimonials-section .section-subtitle {
+    color: var(--text-light);
+}
+
 .section-header-flex {
     display: flex;
     align-items: flex-end;
@@ -1824,6 +1886,7 @@ nav.nav-menu ul li a.active {
     height: 100%;
 }
 
+/* --- Professional Light White Testimonial Card --- */
 .testimonial-card {
     background: rgba(6, 30, 75, 0.92);
     backdrop-filter: blur(20px);
@@ -1924,6 +1987,7 @@ nav.nav-menu ul li a.active {
     margin-bottom: 28px;
     position: relative;
     z-index: 2;
+    font-weight: 400;
 }
 
 .testimonial-client {
@@ -1932,6 +1996,8 @@ nav.nav-menu ul li a.active {
     gap: 16px;
     position: relative;
     z-index: 2;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 18px;
 }
 
 .testimonial-avatar-wrapper {
@@ -1962,6 +2028,336 @@ nav.nav-menu ul li a.active {
     font-size: 12.5px;
     font-weight: 500;
     margin: 0;
+}
+
+/* --- Dedicated Testimonials Page Styling (Standalone White Theme - 2 Columns) --- */
+.testimonials-standalone-page {
+    position: relative;
+    background-color: #FFFFFF;
+    color: var(--text-dark);
+    padding: 90px 0;
+}
+
+.testimonials-standalone-page .section-tag {
+    color: var(--primary-color) !important;
+    background: rgba(10, 77, 191, 0.08);
+    border: 1px solid rgba(10, 77, 191, 0.2);
+    padding: 6px 18px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.testimonials-standalone-page .section-title {
+    color: var(--secondary-color) !important;
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-shadow: none;
+}
+
+.testimonials-standalone-page .section-title span {
+    color: var(--primary-color) !important;
+}
+
+/* 2-Column Grid Layout for Testimonials Page */
+.testimonial-page-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 992px) {
+    .testimonial-page-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Standalone White Testimonial Card */
+.testimonial-page-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 36px 30px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.testimonial-page-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(10, 77, 191, 0.12);
+}
+
+.testimonial-page-card .quote-watermark {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    font-size: 80px;
+    color: rgba(10, 77, 191, 0.05);
+    pointer-events: none;
+    transition: var(--transition-smooth);
+}
+
+.testimonial-page-card:hover .quote-watermark {
+    color: rgba(10, 77, 191, 0.12);
+    transform: scale(1.1);
+}
+
+.testimonial-page-card .testimonial-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.testimonial-page-card .testimonial-rating {
+    color: #F59E0B;
+    font-size: 15px;
+    display: flex;
+    gap: 4px;
+    filter: drop-shadow(0 2px 4px rgba(245, 158, 11, 0.25));
+}
+
+.testimonial-page-card .verified-badge {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #059669;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    padding: 4px 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.testimonial-page-card .testimonial-review {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #334155;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 2;
+    font-weight: 400;
+}
+
+.testimonial-page-card .testimonial-client {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 20px;
+}
+
+.testimonial-page-card .testimonial-avatar-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(10, 77, 191, 0.15);
+    flex-shrink: 0;
+}
+
+.testimonial-page-card .testimonial-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-page-card .testimonial-client-info h4 {
+    color: var(--secondary-color) !important;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.testimonial-page-card .testimonial-client-info p {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* --- Dedicated Industries Page Design Upgrades --- */
+.industries-standalone-page {
+    background-color: #F8FAFC;
+    padding: 90px 0;
+}
+
+.industry-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 1024px) {
+    .industry-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .industry-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.industry-page-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.industry-page-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(10, 77, 191, 0.12);
+    border-color: var(--primary-color);
+}
+
+.industry-card-image-box {
+    position: relative;
+    height: 320px;
+    background: #031435;
+    overflow: hidden;
+}
+
+.industry-card-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+.industry-page-card:hover .industry-card-image-box img {
+    transform: scale(1.06);
+}
+
+.industry-card-image-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(6, 43, 110, 0.2) 0%, transparent 45%, rgba(3, 20, 53, 0.5) 100%);
+    pointer-events: none;
+}
+
+.industry-number-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--secondary-color);
+    color: var(--accent-color);
+    font-size: 13px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 193, 7, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.industry-card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.industry-card-body h3 {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+}
+
+.industry-card-body p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.industry-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #F1F5F9;
+}
+
+.industry-tech-tags span {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: rgba(10, 77, 191, 0.08);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(10, 77, 191, 0.15);
+}
+
+/* Featured Impact Metrics Strip for Industries Page */
+.industry-impact-strip {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #031435 100%);
+    border-radius: 20px;
+    padding: 50px 40px;
+    color: #FFFFFF;
+    box-shadow: var(--shadow-premium);
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .industry-impact-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .industry-impact-strip {
+        grid-template-columns: 1fr;
+        padding: 35px 20px;
+    }
+}
+
+.impact-metric-item h4 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.impact-metric-item p {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
 /* --- Contact CTA --- */

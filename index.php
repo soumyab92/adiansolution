@@ -173,18 +173,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <i class="fas fa-times"></i>
                 </button>
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#solutions">Solutions</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#industries">Industries</a></li>
-                    <li><a href="#why-choose-us">Why Choose Us</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             
-            <a href="#contact" class="btn btn-accent">Get a Quote</a>
+            <a href="contact.html" class="btn btn-accent">Get a Quote</a>
             
             <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
                 <span></span>
@@ -318,6 +318,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="stat-info">
                         <span class="stat-number" data-target="50">0</span>
                         <span class="stat-label">Expert Engineers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- ABOUT US SECTION --- -->
+    <section class="section bg-light" id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">About ADIAN Solution & Services</span>
+                <h2 class="section-title">Pioneering <span>Industrial Automation</span> & Liquid Dosing</h2>
+            </div>
+
+            <div class="about-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
+                <div class="about-text" data-aos="fade-right">
+                    <h3 style="font-size: 24px; color: var(--primary-dark); margin-bottom: 15px; font-weight: 700;">Empowering Modern Manufacturing with Intelligent Control</h3>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 20px;">
+                        Founded with a mission to eliminate industrial downtime and optimize liquid volumetric accuracy, <strong>ADIAN Solution & Services</strong> delivers end-to-end B2B industrial automation, PLC & SCADA software integration, and customized panel manufacturing across India.
+                    </p>
+                    <p style="font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 25px;">
+                        From automated liquid dosing machines to robust PCC, MCC, and APFC power panels, our certified engineering team manufactures ISO-compliant systems in our Howrah facility for seamless plant performance.
+                    </p>
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <a href="#solutions" class="btn btn-primary">Our Solutions <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-outline-blue">Consult Engineer</a>
+                    </div>
+                </div>
+
+                <div class="about-highlights" data-aos="fade-left" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                    <div style="background: var(--white); padding: 25px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--accent-color);">
+                        <i class="fas fa-microchip" style="font-size: 32px; color: var(--accent-color); margin-bottom: 12px;"></i>
+                        <h4 style="font-size: 18px; color: var(--primary-dark); margin-bottom: 8px;">PLC & SCADA</h4>
+                        <p style="font-size: 13px; color: var(--text-light); line-height: 1.5; margin: 0;">Siemens, Rockwell & Schneider programming expertise.</p>
+                    </div>
+                    <div style="background: var(--white); padding: 25px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--primary-color);">
+                        <i class="fas fa-tint" style="font-size: 32px; color: var(--primary-color); margin-bottom: 12px;"></i>
+                        <h4 style="font-size: 18px; color: var(--primary-dark); margin-bottom: 8px;">Dosing Precision</h4>
+                        <p style="font-size: 13px; color: var(--text-light); line-height: 1.5; margin: 0;">High-precision chemical & fluid volumetric units.</p>
+                    </div>
+                    <div style="background: var(--white); padding: 25px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--success-color);">
+                        <i class="fas fa-shield-halved" style="font-size: 32px; color: var(--success-color); margin-bottom: 12px;"></i>
+                        <h4 style="font-size: 18px; color: var(--primary-dark); margin-bottom: 8px;">Certified Quality</h4>
+                        <p style="font-size: 13px; color: var(--text-light); line-height: 1.5; margin: 0;">GST & UDYAM registered engineering standard.</p>
+                    </div>
+                    <div style="background: var(--white); padding: 25px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--warning-color);">
+                        <i class="fas fa-headset" style="font-size: 32px; color: var(--warning-color); margin-bottom: 12px;"></i>
+                        <h4 style="font-size: 18px; color: var(--primary-dark); margin-bottom: 8px;">24/7 Field Support</h4>
+                        <p style="font-size: 13px; color: var(--text-light); line-height: 1.5; margin: 0;">Rapid response commissioning & plant audit team.</p>
                     </div>
                 </div>
             </div>
@@ -1040,12 +1089,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="footer-col">
                     <h3>Solutions</h3>
                     <ul class="footer-links-list">
-                        <li><a href="#solutions">PLC & SCADA</a></li>
-                        <li><a href="#solutions">Liquid Dosing Systems</a></li>
-                        <li><a href="#solutions">PCC panel boards</a></li>
-                        <li><a href="#solutions">MCC panel boards</a></li>
-                        <li><a href="#solutions">APFC panel boards</a></li>
-                        <li><a href="#solutions">Industrial Electrification</a></li>
+                        <li><a href="solutions.html">PLC & SCADA</a></li>
+                        <li><a href="solutions.html">Liquid Dosing Systems</a></li>
+                        <li><a href="solutions.html">PCC panel boards</a></li>
+                        <li><a href="solutions.html">MCC panel boards</a></li>
+                        <li><a href="solutions.html">APFC panel boards</a></li>
+                        <li><a href="solutions.html">Industrial Electrification</a></li>
                     </ul>
                 </div>
                 
@@ -1053,12 +1102,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="footer-col">
                     <h3>Company</h3>
                     <ul class="footer-links-list">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#products">Product Catalog</a></li>
-                        <li><a href="#industries">Industries We Serve</a></li>
-                        <li><a href="#why-choose-us">Why Choose Us</a></li>
-                        <li><a href="#contact">Contact Support</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Product Catalog</a></li>
+                        <li><a href="industries.html">Industries We Serve</a></li>
+                        <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
                     </ul>
                 </div>
                 

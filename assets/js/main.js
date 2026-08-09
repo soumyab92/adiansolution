@@ -446,4 +446,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // --- Ensure Video Autoplay in Inner Page Hero Sections ---
+    document.querySelectorAll(".inner-hero-video").forEach(video => {
+        video.muted = true;
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                video.muted = true;
+                video.play();
+            });
+        }
+    });
 });
