@@ -267,10 +267,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <!-- Card 2 -->
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
                     <div class="stat-info">
                         <span class="stat-number" data-target="10">0</span>
-                        <span class="stat-label">Industrial Customers</span>
+                        <span class="stat-label">Years Experience</span>
                     </div>
                 </div>
                 <!-- Card 3 -->
@@ -299,10 +299,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
                 <div class="stat-card stat-duplicate">
-                    <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
                     <div class="stat-info">
                         <span class="stat-number" data-target="10">0</span>
-                        <span class="stat-label">Industrial Customers</span>
+                        <span class="stat-label">Years Experience</span>
                     </div>
                 </div>
                 <div class="stat-card stat-duplicate">
@@ -679,8 +679,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <img src="assets/images/engineer_working.png" alt="Industrial Engineer working on panel board">
                 <div class="why-experience-badge">
-                    <span class="why-badge-num">15+</span>
-                    <span class="why-badge-text">Years Combined<br>Expertise</span>
+                    <span class="why-badge-num">10+</span>
+                    <span class="why-badge-text">Years<br>Experience</span>
                 </div>
             </div>
             
