@@ -1670,8 +1670,8 @@ nav.nav-menu ul li a.active {
 
 .timeline-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
     position: relative;
     z-index: 2;
 }

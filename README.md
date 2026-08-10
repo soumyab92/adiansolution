@@ -50,4 +50,4 @@ saikat/
 - **Registered Office**: Khakurda, Bara Mahanpur, Paschim Medinipur - 721 445
 - **Manufacturing Plant**: Sankrail Industrial Rd, Sankrail Industrial Park, Poly Park, Dhulagori, Howrah, West Bengal 711313
 - **GST Registration**: 19CGBPM1738C1ZM
-- **UDYAM Registration**: UDYAM-WB-16-0096011
+- **MSME Registration**: WB-16-0096011

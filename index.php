@@ -156,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span class="top-bar-divider">|</span>
                 <span class="top-bar-info"><i class="fas fa-map-marker-alt"></i> Factory: Sankrail, Howrah</span>
                 <span class="top-bar-divider">|</span>
-                <span class="top-bar-badge"><i class="fas fa-shield-halved"></i> GST & UDYAM Registered</span>
+                <span class="top-bar-badge"><i class="fas fa-shield-halved"></i> MSME Registered</span>
             </div>
         </div>
     </div>
@@ -179,7 +179,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li><a href="products.html">Products</a></li>
                     <li><a href="industries.html">Industries</a></li>
                     <li><a href="why-choose-us.html">Why Choose Us</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -262,16 +261,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="stat-icon"><i class="fa-solid fa-gears"></i></div>
                     <div class="stat-info">
-                        <span class="stat-number" data-target="250">0</span>
-                        <span class="stat-label">Projects Completed</span>
+                        <span class="stat-number" data-target="25">0</span>
+                        <span class="stat-label">Projects Delivered</span>
                     </div>
                 </div>
                 <!-- Card 2 -->
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
                     <div class="stat-info">
-                        <span class="stat-number" data-target="120">0</span>
-                        <span class="stat-label">Happy Clients</span>
+                        <span class="stat-number" data-target="10">0</span>
+                        <span class="stat-label">Industrial Customers</span>
                     </div>
                 </div>
                 <!-- Card 3 -->
@@ -279,7 +278,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="stat-info">
                         <span class="stat-number" data-target="15">0</span>
-                        <span class="stat-label">Years Experience</span>
+                        <span class="stat-label">Years Combined Expertise</span>
                     </div>
                 </div>
                 <!-- Card 4 -->
@@ -287,7 +286,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="stat-icon"><i class="fa-solid fa-user-gear"></i></div>
                     <div class="stat-info">
                         <span class="stat-number" data-target="50">0</span>
-                        <span class="stat-label">Expert Engineers</span>
+                        <span class="stat-label">Systems &amp; Sites Supported</span>
                     </div>
                 </div>
 
@@ -295,29 +294,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="stat-card stat-duplicate">
                     <div class="stat-icon"><i class="fa-solid fa-gears"></i></div>
                     <div class="stat-info">
-                        <span class="stat-number" data-target="250">0</span>
-                        <span class="stat-label">Projects Completed</span>
+                        <span class="stat-number" data-target="25">0</span>
+                        <span class="stat-label">Projects Delivered</span>
                     </div>
                 </div>
                 <div class="stat-card stat-duplicate">
                     <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
                     <div class="stat-info">
-                        <span class="stat-number" data-target="120">0</span>
-                        <span class="stat-label">Happy Clients</span>
+                        <span class="stat-number" data-target="10">0</span>
+                        <span class="stat-label">Industrial Customers</span>
                     </div>
                 </div>
                 <div class="stat-card stat-duplicate">
                     <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="stat-info">
                         <span class="stat-number" data-target="15">0</span>
-                        <span class="stat-label">Years Experience</span>
+                        <span class="stat-label">Years Combined Expertise</span>
                     </div>
                 </div>
                 <div class="stat-card stat-duplicate">
                     <div class="stat-icon"><i class="fa-solid fa-user-gear"></i></div>
                     <div class="stat-info">
                         <span class="stat-number" data-target="50">0</span>
-                        <span class="stat-label">Expert Engineers</span>
+                        <span class="stat-label">Systems &amp; Sites Supported</span>
                     </div>
                 </div>
             </div>
@@ -350,8 +349,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="about-highlights" data-aos="fade-left" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
                     <div style="background: var(--white); padding: 25px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--accent-color);">
                         <i class="fas fa-microchip" style="font-size: 32px; color: var(--accent-color); margin-bottom: 12px;"></i>
-                        <h4 style="font-size: 18px; color: var(--primary-dark); margin-bottom: 8px;">PLC & SCADA</h4>
-                        <p style="font-size: 13px; color: var(--text-light); line-height: 1.5; margin: 0;">Siemens, Rockwell & Schneider programming expertise.</p>
+                        <h4 style="font-size: 18px; color: var(--primary-dark); margin-bottom: 8px;">PLC, SCADA, IoT &amp; Cloud</h4>
+                        <p style="font-size: 13px; color: var(--text-light); line-height: 1.5; margin: 0;">Siemens, Rockwell, Schneider, Delta, Inovance, ABB &amp; Weintek programming expertise.</p>
                     </div>
                     <div style="background: var(--white); padding: 25px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--primary-color);">
                         <i class="fas fa-tint" style="font-size: 32px; color: var(--primary-color); margin-bottom: 12px;"></i>
@@ -361,7 +360,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div style="background: var(--white); padding: 25px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--success-color);">
                         <i class="fas fa-shield-halved" style="font-size: 32px; color: var(--success-color); margin-bottom: 12px;"></i>
                         <h4 style="font-size: 18px; color: var(--primary-dark); margin-bottom: 8px;">Certified Quality</h4>
-                        <p style="font-size: 13px; color: var(--text-light); line-height: 1.5; margin: 0;">GST & UDYAM registered engineering standard.</p>
+                        <p style="font-size: 13px; color: var(--text-light); line-height: 1.5; margin: 0;">MSME registered engineering standard.</p>
                     </div>
                     <div style="background: var(--white); padding: 25px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--warning-color);">
                         <i class="fas fa-headset" style="font-size: 32px; color: var(--warning-color); margin-bottom: 12px;"></i>
@@ -429,6 +428,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <h3>Industrial Automation</h3>
                     <p>End-to-end plant instrumentation and automation consultancy, panel building, loop check-outs, and custom control room architecture setups.</p>
+                </div>
+                <!-- IoT & Cloud -->
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="solution-icon-container">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3>IoT &amp; Cloud</h3>
+                    <p>Industrial IoT gateways and cloud data logging solutions for real-time remote telemetry, condition monitoring, and instant fault alerts.</p>
+                </div>
+                <!-- VFD & Servo Drive -->
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="solution-icon-container">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <h3>VFD &amp; Servo Drive</h3>
+                    <p>High-performance Variable Frequency Drives (VFD) and precision Servo drive integration for smooth motor control, energy savings, and exact positioning.</p>
                 </div>
             </div>
 
@@ -530,6 +545,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <p>Automating fabric processing lines, temperature settings control on drying units, and optimizing power usage via APFC panels.</p>
                         </div>
                     </div>
+                    <!-- Card 7: Steel & Iron Process & Manufacturing -->
+                    <div class="industry-slider-card">
+                        <div class="industry-card-inner">
+                            <div class="industry-card-num">07</div>
+                            <div class="industry-icon-box">
+                                <i class="fa-solid fa-fire-burner"></i>
+                            </div>
+                            <h3>Steel &amp; Iron Process &amp; Manufacturing</h3>
+                            <p>Robust automation for blast furnaces, rolling mills, heat treatment control panels, foundry temperature regulation, and heavy motor drive integration.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -585,7 +611,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Product 3: APFC Panel -->
                     <div class="product-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="product-img-wrapper">
-                            <img src="assets/images/scada_monitor.png" alt="APFC Panel & Monitoring Console">
+                            <img src="assets/images/apfc_panel.png" alt="APFC Panel">
                         </div>
                         <h3>APFC Panel</h3>
                         <div class="product-specs">
@@ -601,7 +627,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Product 4: MCC Panel -->
                     <div class="product-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="product-img-wrapper">
-                            <img src="assets/images/stainless_plant.png" alt="MCC Motor Control Plant Assembly">
+                            <img src="assets/images/mcc_panel.webp" alt="MCC Panel">
                         </div>
                         <h3>MCC Panel</h3>
                         <div class="product-specs">
@@ -615,13 +641,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Product 5: Control Panel -->
                     <div class="product-card" data-aos="fade-up" data-aos-delay="500">
                         <div class="product-img-wrapper">
-                            <img src="assets/images/industrial_piping.png" alt="Industrial Control Panel & Manifold">
+                            <img src="assets/images/control_panel.png" alt="Control Panel">
                         </div>
                         <h3>Control Panel</h3>
                         <div class="product-specs">
                             <span>Application: Plant Machine Command</span>
                             <span>Wiring: Ferrule-marked premium neat routing</span>
                             <span>Approvals: Standard CE / Industrial safety</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline-blue">Inquire Specifications</a>
+                    </div>
+
+                    <!-- Product 6: IoT CLOUD -->
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="product-img-wrapper">
+                            <img src="assets/images/iot_cloud.webp" alt="IoT CLOUD">
+                        </div>
+                        <h3>IoT CLOUD</h3>
+                        <div class="product-specs">
+                            <span>Protocol: Modbus RTU / MQTT Support</span>
+                            <span>Connectivity: Industrial Cellular &amp; Ethernet</span>
+                            <span>Analytics: Real-time Cloud Telemetry &amp; Alerts</span>
                         </div>
                         <a href="#contact" class="btn btn-outline-blue">Inquire Specifications</a>
                     </div>
@@ -640,7 +680,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <img src="assets/images/engineer_working.png" alt="Industrial Engineer working on panel board">
                 <div class="why-experience-badge">
                     <span class="why-badge-num">15+</span>
-                    <span class="why-badge-text">Years Of<br>excellence</span>
+                    <span class="why-badge-text">Years Combined<br>Expertise</span>
                 </div>
             </div>
             
@@ -729,18 +769,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Step 3 -->
                     <div class="timeline-step" data-aos="fade-up" data-aos-delay="300">
                         <div class="step-number">03</div>
-                        <h3 class="step-title">Manufacturing</h3>
-                        <p class="step-desc">Panel sheet assembly, component integration, and wiring logic.</p>
+                        <h3 class="step-title">Customer Approval</h3>
+                        <p class="step-desc">Reviewing schematic drawings, BOM specs, and securing customer sign-off.</p>
                     </div>
                     <!-- Step 4 -->
                     <div class="timeline-step" data-aos="fade-up" data-aos-delay="400">
                         <div class="step-number">04</div>
-                        <h3 class="step-title">Installation</h3>
-                        <p class="step-desc">Positioning hardware, field terminal wiring, and power testing.</p>
+                        <h3 class="step-title">Manufacturing</h3>
+                        <p class="step-desc">Panel sheet assembly, component integration, and wiring logic.</p>
                     </div>
                     <!-- Step 5 -->
                     <div class="timeline-step" data-aos="fade-up" data-aos-delay="500">
                         <div class="step-number">05</div>
+                        <h3 class="step-title">Installation</h3>
+                        <p class="step-desc">Positioning hardware, field terminal wiring, and power testing.</p>
+                    </div>
+                    <!-- Step 6 -->
+                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="600">
+                        <div class="step-number">06</div>
                         <h3 class="step-title">Commissioning</h3>
                         <p class="step-desc">Signal loop checking, system hot testing, and handing over.</p>
                     </div>
@@ -750,7 +796,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
     <!-- --- CLIENT TESTIMONIALS SECTION --- -->
-    <section class="section testimonials-section" id="testimonials">
+    <section class="section testimonials-section" id="testimonials" style="display: none;">
         <div class="container">
             <div class="section-header-flex" data-aos="fade-up">
                 <div>
@@ -1001,9 +1047,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <span class="legal-badge-label">GST Registration</span>
                             <span class="legal-badge-val">19CGBPM1738C1ZM</span>
                         </div>
-                        <div class="legal-badge udyam-badge">
-                            <span class="legal-badge-label">UDYAM REGISTRATION</span>
-                            <span class="legal-badge-val">UDYAM-WB-16-0096011</span>
+                        <div class="legal-badge udyam-badge" style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                            <div>
+                                <span class="legal-badge-label">MSME REGISTRATION</span>
+                                <span class="legal-badge-val">WB-16-0096011</span>
+                            </div>
+                            <a href="assets/images/msme_registration_card.jpg" target="_blank" title="View MSME Registration Certificate" style="flex-shrink: 0; display: inline-block;">
+                                <img src="assets/images/msme_registration_card.jpg" alt="MSME Registration Card WB-16-0096011" style="width: 140px; height: 85px; object-fit: cover; border-radius: 6px; border: 1px solid rgba(10, 77, 191, 0.2); box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1107,7 +1158,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li><a href="products.html">Product Catalog</a></li>
                         <li><a href="industries.html">Industries We Serve</a></li>
                         <li><a href="why-choose-us.html">Why Choose Us</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
                         <li><a href="contact.html">Contact Support</a></li>
                     </ul>
                 </div>
