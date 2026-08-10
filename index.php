@@ -1052,9 +1052,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="legal-badge-label">MSME REGISTRATION</span>
                                 <span class="legal-badge-val">WB-16-0096011</span>
                             </div>
-                            <a href="assets/images/msme_registration_card.jpg" target="_blank" title="View MSME Registration Certificate" style="flex-shrink: 0; display: inline-block;">
-                                <img src="assets/images/msme_registration_card.jpg" alt="MSME Registration Card WB-16-0096011" style="width: 140px; height: 85px; object-fit: cover; border-radius: 6px; border: 1px solid rgba(10, 77, 191, 0.2); box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                            </a>
+                            <img src="assets/images/msme_registration_card.jpg" alt="MSME Registration Card WB-16-0096011" style="width: 140px; height: 85px; object-fit: cover; border-radius: 6px; border: 1px solid rgba(10, 77, 191, 0.2); box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                         </div>
                     </div>
                 </div>
