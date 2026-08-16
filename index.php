@@ -270,7 +270,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
                     <div class="stat-info">
                         <span class="stat-number" data-target="10">0</span>
-                        <span class="stat-label">Years Experience</span>
+                        <span class="stat-label">Years Team Experience</span>
                     </div>
                 </div>
                 <!-- Card 3 -->
@@ -302,7 +302,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
                     <div class="stat-info">
                         <span class="stat-number" data-target="10">0</span>
-                        <span class="stat-label">Years Experience</span>
+                        <span class="stat-label">Years Team Experience</span>
                     </div>
                 </div>
                 <div class="stat-card stat-duplicate">
@@ -327,7 +327,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section class="section bg-light" id="about">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">About ADIAN Solution & Services</span>
+                <span class="section-tag">Engineering Solutions, Not Just Products.</span>
                 <h2 class="section-title">Pioneering <span>Industrial Automation</span> & Liquid Dosing</h2>
             </div>
 
@@ -395,7 +395,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <i class="fa-solid fa-tint"></i>
                     </div>
                     <h3>Liquid Dosing Systems</h3>
-                    <p>Highly precise liquid dosing applicators engineered for chemical, water, pharma, and agricultural feed applications to ensure exact volumetric accuracy.</p>
+                    <p>Integrated Flow sensor and Loadcell control. Monitoring proper pipeline pressure and flow rate. Maintain almost perfect accuracy.</p>
                 </div>
                 <!-- PCC Panels -->
                 <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
@@ -601,9 +601,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <h3>Liquid Dosing System</h3>
                         <div class="product-specs">
-                            <span>Flow Range: 0.1 L/h - 500 L/h</span>
-                            <span>Structure: SS304/SS316 Stainless Steel</span>
-                            <span>Integrated Flow Sensor Control</span>
+                            <span>Integrated Flow sensor and Loadcell control</span>
+                            <span>Monitoring proper pipeline pressure and flow rate</span>
+                            <span>Maintain almost perfect accuracy</span>
                         </div>
                         <a href="#contact" class="btn btn-outline-blue">Inquire Specifications</a>
                     </div>
@@ -680,7 +680,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <img src="assets/images/engineer_working.png" alt="Industrial Engineer working on panel board">
                 <div class="why-experience-badge">
                     <span class="why-badge-num">10+</span>
-                    <span class="why-badge-text">Years<br>Experience</span>
+                    <span class="why-badge-text">Years Team<br>Experience</span>
                 </div>
             </div>
             
@@ -698,8 +698,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="why-feature-item">
                         <div class="why-feature-icon"><i class="fas fa-check"></i></div>
                         <div>
-                            <h3 class="why-feature-title">10+ Years Experience</h3>
-                            <p class="why-feature-desc">Over a decade of successful plant integrations and field commissioning experience.</p>
+                            <h3 class="why-feature-title">10+ Years Team Experience</h3>
+                            <p class="why-feature-desc">Over a decade of successful plant integration and field commissioning experience of this expertise team to give proper solutions .</p>
                         </div>
                     </div>
                     <!-- Feature 2 -->
@@ -737,7 +737,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div style="margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="#contact" class="btn btn-primary"><i class="fas fa-sliders"></i> Schedule Plant Audit</a>
+                    <a href="#schedule-audit" class="btn btn-primary open-audit-modal"><i class="fas fa-sliders"></i> Schedule Plant Audit</a>
                     <a href="tel:+918100122721" class="btn btn-outline-blue"><i class="fas fa-headset"></i> 24x7 Helpline</a>
                 </div>
             </div>
@@ -1052,7 +1052,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="legal-badge-label">MSME REGISTRATION</span>
                                 <span class="legal-badge-val">WB-16-0096011</span>
                             </div>
-                            <img src="assets/images/msme_registration_card.jpg" alt="MSME Registration Card WB-16-0096011" style="width: 140px; height: 85px; object-fit: cover; border-radius: 6px; border: 1px solid rgba(10, 77, 191, 0.2); box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                            <img src="assets/images/msme-logo.png" alt="MSME Logo WB-16-0096011" style="width: 140px; height: 85px; object-fit: contain; background: #ffffff; padding: 4px; border-radius: 6px; border: 1px solid rgba(10, 77, 191, 0.2); box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                         </div>
                     </div>
                 </div>

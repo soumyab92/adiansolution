@@ -458,4 +458,194 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
+
+    // --- SCHEDULE PLANT AUDIT POPUP MODAL CONTROLLER ---
+    const initAuditModal = () => {
+        // Inject Modal HTML into body if not already present
+        if (!document.getElementById("auditModal")) {
+            const modalHTML = `
+            <div class="audit-modal-overlay" id="auditModal" aria-hidden="true">
+                <div class="audit-modal-container" role="dialog" aria-modal="true" aria-labelledby="auditModalTitle">
+                    <button class="audit-modal-close" id="closeAuditModal" aria-label="Close modal">&times;</button>
+                    <div class="audit-modal-header">
+                        <div class="audit-modal-badge"><i class="fas fa-calendar-check"></i> Book Plant Audit</div>
+                        <h3 id="auditModalTitle">Schedule a Plant Audit Call</h3>
+                        <p>Select your preferred date, time slot, and audit requirement to speak directly with our senior automation engineers.</p>
+                    </div>
+                    <form id="audit-booking-form" class="audit-modal-form" action="https://formsubmit.co/ajax/soumyabhattacharya.kgp@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="📅 New Plant Audit Call Scheduled - ADIAN Solution">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <div class="audit-form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Full Name *</label>
+                                <input type="text" name="name" required placeholder="e.g. Rajesh Kumar" class="form-control" minlength="2" maxlength="100">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone / Mobile Number *</label>
+                                <input type="tel" name="phone" id="auditPhone" required placeholder="e.g. 9876543210" class="form-control" maxlength="10">
+                            </div>
+                        </div>
+                        <div class="audit-form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Preferred Date *</label>
+                                <input type="date" name="audit_date" id="auditDateInput" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Preferred Time Slot *</label>
+                                <select name="audit_time" required class="form-control">
+                                    <option value="" disabled selected>Select time slot</option>
+                                    <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
+                                    <option value="Afternoon (1:00 PM - 5:00 PM)">Afternoon (1:00 PM - 5:00 PM)</option>
+                                    <option value="Evening (5:00 PM - 8:00 PM)">Evening (5:00 PM - 8:00 PM)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Primary Purpose of Audit *</label>
+                            <select name="audit_purpose" required class="form-control" style="margin-bottom: 10px;">
+                                <option value="" disabled selected>Select Audit Focus</option>
+                                <option value="PLC & SCADA Control System Audit">PLC & SCADA Control System Audit</option>
+                                <option value="Liquid Dosing Machine Installation & Calibration">Liquid Dosing Machine Installation & Calibration</option>
+                                <option value="PCC / MCC / APFC Power Panel Inspection">PCC / MCC / APFC Power Panel Inspection</option>
+                                <option value="General Plant Efficiency & Downtime Audit">General Plant Efficiency & Downtime Audit</option>
+                                <option value="Other Customized Automation Solution">Other Customized Automation Solution</option>
+                            </select>
+                            <label class="form-label">Additional Purpose / Location Notes</label>
+                            <textarea name="audit_notes" rows="3" placeholder="Briefly describe your plant location, machinery details, or specific concerns..." class="form-control"></textarea>
+                        </div>
+                        <button type="submit" id="submitAuditBtn" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px; font-weight: 700; padding: 12px 20px;">
+                            <i class="fas fa-calendar-plus"></i> Confirm & Schedule Call
+                        </button>
+                    </form>
+                    <div id="audit-success-msg" style="display: none; background: #DEF7EC; color: #03543F; padding: 20px; border-radius: 12px; margin-top: 15px; border-left: 4px solid #0E9F6E; line-height: 1.6;">
+                        <div style="font-weight: 700; font-size: 16px; margin-bottom: 4px;"><i class="fas fa-check-circle"></i> Audit Call Scheduled Successfully!</div>
+                        <p style="margin: 0; font-size: 14px;">Thank you! Our senior automation engineers have received your request and will call you on your requested date & time slot to confirm your plant audit.</p>
+                        <button id="resetAuditFormBtn" class="btn btn-outline-blue btn-sm" style="margin-top: 14px;">Book Another Call</button>
+                    </div>
+                </div>
+            </div>
+            `;
+            document.body.insertAdjacentHTML("beforeend", modalHTML);
+        }
+
+        const modalOverlay = document.getElementById("auditModal");
+        const closeBtn = document.getElementById("closeAuditModal");
+        const auditForm = document.getElementById("audit-booking-form");
+        const dateInput = document.getElementById("auditDateInput");
+        const phoneInput = document.getElementById("auditPhone");
+        const successMsg = document.getElementById("audit-success-msg");
+        const resetBtn = document.getElementById("resetAuditFormBtn");
+
+        // Set minimum date to today
+        if (dateInput) {
+            const today = new Date().toISOString().split("T")[0];
+            dateInput.min = today;
+        }
+
+        // Restrict phone input to 10 digits
+        if (phoneInput) {
+            phoneInput.addEventListener("input", (e) => {
+                e.target.value = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
+            });
+        }
+
+        const openModal = (e) => {
+            if (e) e.preventDefault();
+            if (modalOverlay) {
+                modalOverlay.classList.add("active");
+                modalOverlay.setAttribute("aria-hidden", "false");
+                document.body.style.overflow = "hidden";
+            }
+        };
+
+        const closeModal = () => {
+            if (modalOverlay) {
+                modalOverlay.classList.remove("active");
+                modalOverlay.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+            }
+        };
+
+        // Attach open listener to all Schedule Plant Audit buttons across document
+        document.querySelectorAll("a, button").forEach(el => {
+            const text = el.textContent.trim().toLowerCase();
+            const href = el.getAttribute("href");
+            if (text.includes("schedule plant audit") || text.includes("schedule audit") || href === "#schedule-audit" || el.classList.contains("open-audit-modal")) {
+                el.addEventListener("click", openModal);
+            }
+        });
+
+        if (closeBtn) closeBtn.addEventListener("click", closeModal);
+
+        if (modalOverlay) {
+            modalOverlay.addEventListener("click", (e) => {
+                if (e.target === modalOverlay) closeModal();
+            });
+        }
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modalOverlay && modalOverlay.classList.contains("active")) {
+                closeModal();
+            }
+        });
+
+        if (resetBtn && auditForm && successMsg) {
+            resetBtn.addEventListener("click", () => {
+                auditForm.reset();
+                auditForm.style.display = "block";
+                successMsg.style.display = "none";
+            });
+        }
+
+        // Handle AJAX submission
+        if (auditForm) {
+            auditForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                if (phoneInput && phoneInput.value.length !== 10) {
+                    alert("Please enter a valid 10-digit mobile number.");
+                    phoneInput.focus();
+                    return;
+                }
+
+                const submitBtn = document.getElementById("submitAuditBtn");
+                const originalBtnHTML = submitBtn ? submitBtn.innerHTML : "Confirm & Schedule Call";
+
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Scheduling Call...';
+                }
+
+                const formData = new FormData(auditForm);
+
+                fetch("https://formsubmit.co/ajax/soumyabhattacharya.kgp@gmail.com", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(res => res.json())
+                .then(() => {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnHTML;
+                    }
+                    auditForm.style.display = "none";
+                    if (successMsg) successMsg.style.display = "block";
+                })
+                .catch(() => {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnHTML;
+                    }
+                    auditForm.style.display = "none";
+                    if (successMsg) successMsg.style.display = "block";
+                });
+            });
+        }
+    };
+
+    initAuditModal();
 });
